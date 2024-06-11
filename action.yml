@@ -1,0 +1,23 @@
+name: 'Get Output URL v2'
+description: 'Generate Job URLs'
+author: 'Rob Nutland'
+inputs:
+  TOKEN:
+    description: GitHub App token. 
+  OWNER:
+    description: Owner of the repo containing the workflow.
+  REPO:
+    description: Repo containing the workflow.
+  INPUTS:
+    description: The inputs that are to be passed to the workflow.
+  JOB_INDEX:
+    description: The index number of the workflow's job that a log URL should be returned for.
+outputs:
+  url:
+    description: 'URL to the log of the specified workflow job.'
+runs:
+  using: 'node12'
+  main: 'lib/main.js'
+branding:
+  icon: 'lock'
+  color: 'yellow'
